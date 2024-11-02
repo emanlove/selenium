@@ -67,7 +67,6 @@ namespace OpenQA.Selenium.Environment
             {
                 browser = Browser.Chrome;
                 options = GetDriverOptions<ChromeOptions>(driverType, driverOptions);
-                options.UseWebSocketUrl = true;
 
                 var chromeOptions = (ChromeOptions)options;
                 chromeOptions.AddArguments("--no-sandbox", "--disable-dev-shm-usage");
@@ -183,6 +182,8 @@ namespace OpenQA.Selenium.Environment
                 options.ScriptTimeout = overriddenOptions.ScriptTimeout;
                 options.PageLoadTimeout = overriddenOptions.PageLoadTimeout;
                 options.ImplicitWaitTimeout = overriddenOptions.ImplicitWaitTimeout;
+
+                options.UseWebSocketUrl = overriddenOptions.UseWebSocketUrl;
             }
 
             return options;
