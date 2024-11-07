@@ -145,7 +145,8 @@ class ChromiumDriver(RemoteWebDriver):
         return self.execute("getSinks")["value"]
 
     def get_issue_message(self):
-        """:Returns: An error message when there is any issue in a Cast session."""
+        """:Returns: An error message when there is any issue in a Cast
+        session."""
         return self.execute("getIssueMessage")["value"]
 
     def set_sink_to_use(self, sink_name: str) -> dict:
